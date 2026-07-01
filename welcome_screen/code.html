@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ConnectPro - Welcome</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#eeefff",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "surface-container-low": "#eff4ff",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#bdffdb",
+                        "on-surface": "#0b1c30",
+                        "secondary-container": "#dae2fd",
+                        "on-primary": "#ffffff",
+                        "on-tertiary-fixed": "#002113",
+                        "background": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "primary": "#004ac6",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#00174b",
+                        "tertiary-fixed": "#6ffbbe",
+                        "tertiary": "#006242",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "secondary": "#565e74",
+                        "primary-container": "#2563eb",
+                        "on-secondary-container": "#5c647a",
+                        "surface": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-container": "#007d55",
+                        "on-secondary-fixed": "#131b2e",
+                        "surface-variant": "#d3e4fe",
+                        "error-container": "#ffdad6",
+                        "outline": "#737686",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-primary": "#b4c5ff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-tertiary": "#ffffff",
+                        "on-surface-variant": "#434655",
+                        "primary-fixed": "#dbe1ff",
+                        "on-background": "#0b1c30",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container": "#e5eeff",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "secondary-fixed": "#dae2fd",
+                        "surface-tint": "#0053db",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "error": "#ba1a1a"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-gap-sm": "8px",
+                        "unit": "4px",
+                        "stack-gap-md": "16px",
+                        "grid-columns": "4",
+                        "grid-gutter": "16px",
+                        "container-padding": "20px",
+                        "stack-gap-lg": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "title-lg": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "title-md": ["Inter"],
+                        "label-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+                        "display-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 30px rgba(0, 74, 198, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container relative overflow-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+<div class="absolute top-[-10%] right-[-5%] w-[40vw] h-[40vw] rounded-full bg-primary/5 blur-[100px]"></div>
+<div class="absolute bottom-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-secondary-container/20 blur-[120px]"></div>
+</div>
+<!-- Main Content Area (Transactional - Nav Suppressed) -->
+<main class="flex-1 flex flex-col items-center justify-center p-container-padding z-10 relative w-full max-w-7xl mx-auto h-screen">
+<div class="w-full grid grid-cols-1 lg:grid-cols-2 gap-stack-gap-lg lg:gap-12 items-center h-full py-12">
+<!-- Left Column: Visual/Illustration -->
+<div class="hidden lg:flex flex-col items-center justify-center h-full w-full relative">
+<div class="w-full max-w-[600px] aspect-square relative rounded-3xl overflow-hidden glass-panel flex items-center justify-center p-8">
+<!-- Illustration Placeholder -->
+<img class="w-full h-full object-contain drop-shadow-2xl opacity-90 transition-transform duration-700 hover:scale-[1.02]" data-alt="A highly polished, modern flat vector illustration showing a diverse team of professionals collaborating around a floating, translucent digital workspace. The scene is brightly lit with a soft, cinematic studio light setup, emphasizing clarity and professionalism. The color palette features stark whites, soft silvers, and bold royal blue accents to convey an enterprise-grade software environment. The overall mood is optimistic, energetic, and highly organized." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC64Yt6r7BT3tsGoHUD5gS6MwxZpVtS6Vfsk9ZmATFL-hLptiGU7oiTFAMXGb7ktVGjNhrnRKUs4aT3LrjWiCNLdj3jgxaM-7IqxzlNoxSZyHwVd_tTcVDWrmgBztaOB81GY-7_U3w7YVci58Us4-WMuhYxVnsnctOdyoycLIUvX6Ika5nKLpgWHZST10ZGVIdlv6eX8_pZVT8olDS6vbdbobRrwWDIYKDyLpwBE8ggvtUfFT0nDImLeIGB2mq5X_AaoHAqssbymds"/>
+</div>
+</div>
+<!-- Right Column: Content & Actions -->
+<div class="flex flex-col justify-center max-w-[480px] mx-auto lg:mx-0 w-full glass-panel p-8 md:p-12 rounded-3xl">
+<!-- Brand -->
+<div class="flex items-center gap-2 mb-stack-gap-lg">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-on-primary font-[FILL=1]">groups</span>
+</div>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">ConnectPro</h1>
+</div>
+<!-- Hero Text -->
+<div class="flex flex-col gap-stack-gap-sm mb-stack-gap-lg">
+<h2 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">
+                        Connect Anywhere,<br/>Collaborate Better.
+                    </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">
+                        Experience seamless, high-fidelity virtual meetings designed for enterprise leaders and distributed teams. Elevate your professional communication today.
+                    </p>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-4 w-full mt-stack-gap-md">
+<button class="w-full bg-gradient-to-b from-primary to-[#003ea8] hover:from-[#0053db] hover:to-[#004ac6] text-on-primary font-title-md text-title-md py-4 rounded-[16px] shadow-[0_4px_14px_rgba(0,74,198,0.2)] transition-all active:scale-[0.98] flex items-center justify-center gap-2 group">
+                        Sign In
+                        <span class="material-symbols-outlined text-[20px] transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+<button class="w-full bg-transparent border-[1.5px] border-primary text-primary hover:bg-surface-container-low font-title-md text-title-md py-4 rounded-[16px] transition-all active:scale-[0.98]">
+                        Create Account
+                    </button>
+</div>
+<!-- Trust Indicators / Social Proof -->
+<div class="mt-12 flex flex-col items-center lg:items-start opacity-70">
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4">Trusted by industry leaders</p>
+<div class="flex items-center gap-6 grayscale">
+<!-- Abstract placeholders for logos -->
+<div class="h-6 w-20 bg-outline-variant/30 rounded"></div>
+<div class="h-6 w-24 bg-outline-variant/30 rounded"></div>
+<div class="h-6 w-16 bg-outline-variant/30 rounded"></div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

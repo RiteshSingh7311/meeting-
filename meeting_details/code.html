@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meeting Details - ConnectPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eeefff",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#213145",
+                      "surface-container-low": "#eff4ff",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#bdffdb",
+                      "on-surface": "#0b1c30",
+                      "secondary-container": "#dae2fd",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#002113",
+                      "background": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary": "#004ac6",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary-fixed": "#6ffbbe",
+                      "tertiary": "#006242",
+                      "surface-bright": "#f8f9ff",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "secondary": "#565e74",
+                      "primary-container": "#2563eb",
+                      "on-secondary-container": "#5c647a",
+                      "surface": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "tertiary-container": "#007d55",
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-variant": "#d3e4fe",
+                      "error-container": "#ffdad6",
+                      "outline": "#737686",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#434655",
+                      "primary-fixed": "#dbe1ff",
+                      "on-background": "#0b1c30",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary-fixed": "#dae2fd",
+                      "surface-tint": "#0053db",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap-sm": "8px",
+                      "unit": "4px",
+                      "stack-gap-md": "16px",
+                      "grid-columns": "4",
+                      "grid-gutter": "16px",
+                      "container-padding": "20px",
+                      "stack-gap-lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "22px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+          .glass-panel {
+              background: rgba(255, 255, 255, 0.7);
+              backdrop-filter: blur(20px);
+              -webkit-backdrop-filter: blur(20px);
+              border: 1px solid rgba(195, 198, 215, 0.3);
+              box-shadow: 0 4px 24px -2px rgba(0, 74, 198, 0.05);
+          }
+          .card-shadow {
+              box-shadow: 0 4px 20px rgba(0, 74, 198, 0.04);
+          }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container relative">
+<!-- TopAppBar from JSON -->
+<header class="w-full sticky top-0 z-50 bg-surface/70 dark:bg-on-surface/70 backdrop-blur-xl border-b border-outline-variant/10 shadow-[0_4px_20px_rgba(0,74,198,0.04)]">
+<div class="flex justify-between items-center px-container-padding py-stack-gap-sm w-full max-w-5xl mx-auto">
+<div class="flex items-center gap-3">
+<!-- Back Button instead of Avatar since this is a detail view -->
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/10 transition-colors active:scale-95 duration-200 text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">ConnectPro</div>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/10 transition-colors active:scale-95 duration-200 text-on-surface-variant dark:text-surface-variant">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<!-- Note: Suppressing BottomNavBar/SideNav as this is a task-focused sub-page with a 'Back' action -->
+<main class="flex-1 w-full max-w-5xl mx-auto px-container-padding py-stack-gap-lg pb-24 lg:pb-stack-gap-lg">
+<div class="max-w-2xl mx-auto space-y-stack-gap-lg">
+<!-- Page Header -->
+<div class="space-y-stack-gap-sm text-center">
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface">Weekly Sync: Q3 Planning</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Hosted by Sarah Jenkins</p>
+</div>
+<!-- Host Info Card -->
+<div class="glass-panel rounded-xl p-stack-gap-md flex items-center gap-stack-gap-md">
+<div class="w-14 h-14 rounded-full overflow-hidden shrink-0 border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a female executive in her late 30s with short dark hair, wearing a crisp white blazer over a navy blue top. She is smiling confidently. The background is a brightly lit modern office with blurred glass walls and a hint of greenery. Corporate, polished, high-end photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSoD32tzZpC--SRNrp8Z_fwECpl4tGaQEgF-1pioYTVEZQoGDX68Qgb6HlXUgzKsHUruEKuRDYszdtbS7owK0-_Wfzj5Dyldm6UkGKcj4tet_BKSz2uwBo9sXWcM3ta4bSqgyLCafebiubsTe3Mvz8aSc0gz73u6xqdO2coCzcuoGiBZnc7iVoZgK18IVf5yi1xrPMnR5iJumj8qKxUQP8HgiCJkt4SjyCTrwTEhKA5NDUUVhtV4i4GJ6vg8xnwFLu3iwcuhSat8k"/>
+</div>
+<div class="flex-1">
+<h2 class="font-title-md text-title-md text-on-surface">Sarah Jenkins</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Product Management Director</p>
+</div>
+<div class="flex flex-col items-end gap-1">
+<div class="bg-surface-container-high text-primary px-3 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-tertiary-fixed-dim animate-pulse"></span>
+                        Starting Soon
+                    </div>
+</div>
+</div>
+<!-- Bento Grid Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-gap-md">
+<!-- Date & Time -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-gap-md border border-outline-variant/20 card-shadow flex flex-col justify-between">
+<div class="flex items-start gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</div>
+<div>
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Date &amp; Time</h3>
+<p class="font-title-md text-title-md text-on-surface">Oct 24, 2023</p>
+<p class="font-body-md text-body-md text-on-surface-variant">10:00 AM - 11:30 AM PST</p>
+</div>
+</div>
+</div>
+<!-- Participants -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-gap-md border border-outline-variant/20 card-shadow flex flex-col justify-between">
+<div class="flex items-start gap-3 mb-4">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+</div>
+<div class="w-full">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-1">Participants</h3>
+<div class="flex items-center justify-between mt-2">
+<div class="flex -space-x-3">
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest overflow-hidden bg-surface-variant z-[3]">
+<img class="w-full h-full object-cover" data-alt="A close-up headshot of a male software engineer with glasses and a neat beard, wearing a casual gray sweater. Bright, flat lighting suitable for a corporate profile picture. Neutral background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqNbN9qho1A4ps4g8QtxWgqy4k1aZs_2ViGetX1nHgxDG30i4LMajJdecWexNW46pG9noHj8Y2lZoV6FOSC63AsHaKCF8GORrrRuc1FNbJ4Fb7lF_Xj7YzVm71uuuW_yw54DRmSvhsp4C--OK-s1JtxQr1_TouIgSCNsmXvAlFiSw54wv68RVOIiJfM817t0pdeGk3qCtPiz2n0wcFBwy8xO58mucSthOmVjB0zdUolFvN9LkK9TSUUo7Dsm94LWAfdkssnK7fweY"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest overflow-hidden bg-surface-variant z-[2]">
+<img class="w-full h-full object-cover" data-alt="A headshot of a young professional woman with curly hair, wearing a vibrant blue blouse. She is smiling warmly. The setting is a bright, sunlit room with minimal decor. High quality, clear focus." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP_Jasjav2iE8ECTU0etwayNmorMDA4hTCI8JN3aOrPvx0_88DlvQ37Apm0b5K-SPz2RYZvmDZi9MfV0PLMvjHnP8MkTtExjJZcZxHFCGhNjp4dAdMET2np6mZWwrRrDm_jc-9Z5sZWOrE9TllO_pARUzoS6wb9kjYcs8pq271KfPlcxMRYLwc6DdvAfeF2m9WXVpMDZGMp26b0u375daRivD8IVdo_sZU6YJ5vExW_9xCc8KejdFqwhaC15-RL05Qr_Ou3RoSgM0"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest overflow-hidden bg-surface-container-high text-primary flex items-center justify-center text-xs font-medium z-[1]">
+                                        +4
+                                    </div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">6 Invited</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Credentials Section -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/20 card-shadow overflow-hidden">
+<div class="bg-surface-container-low px-stack-gap-md py-3 border-b border-outline-variant/20 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="lock">lock</span>
+<h3 class="font-title-md text-title-md text-on-surface">Access Credentials</h3>
+</div>
+<div class="p-stack-gap-md space-y-stack-gap-md">
+<!-- Meeting ID -->
+<div class="flex items-center justify-between group">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Meeting ID</p>
+<p class="font-body-lg text-body-lg text-on-surface tracking-wider font-mono">842 195 3042</p>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-200 border border-outline-variant/20" title="Copy Meeting ID">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<div class="h-px w-full bg-outline-variant/20"></div>
+<!-- Passcode -->
+<div class="flex items-center justify-between group">
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant mb-1">Passcode</p>
+<p class="font-body-lg text-body-lg text-on-surface tracking-wider font-mono">PlanQ3</p>
+</div>
+<button class="w-10 h-10 rounded-full flex items-center justify-center text-primary bg-surface hover:bg-surface-container-high transition-colors active:scale-95 duration-200 border border-outline-variant/20" title="Copy Passcode">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Invite Link -->
+<div class="bg-surface-container-lowest rounded-xl p-stack-gap-md border border-outline-variant/20 card-shadow">
+<p class="font-label-md text-label-md text-on-surface-variant mb-2">Invite Link</p>
+<div class="flex items-center gap-2">
+<div class="flex-1 bg-surface-container-low px-4 py-3 rounded-lg border border-outline-variant/30 truncate">
+<p class="font-body-md text-body-md text-on-surface truncate">https://connectpro.app/join/8421953042?pwd=PlanQ3</p>
+</div>
+<button class="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-primary bg-surface-container-high hover:bg-secondary-container transition-colors active:scale-95 duration-200" title="Copy Link">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</button>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row gap-stack-gap-md pt-stack-gap-sm">
+<button class="flex-1 bg-surface text-primary border border-outline-variant/30 rounded-xl py-4 font-title-md text-title-md flex items-center justify-center gap-2 hover:bg-surface-container-low transition-colors active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+                    Share Details
+                </button>
+<button class="flex-1 bg-gradient-to-b from-primary to-[#003ea8] text-on-primary rounded-xl py-4 font-title-md text-title-md flex items-center justify-center gap-2 hover:opacity-90 transition-opacity shadow-[0_4px_14px_rgba(0,74,198,0.25)] active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="video_call">video_call</span>
+                    Join Meeting
+                </button>
+</div>
+</div>
+</main>
+<script>
+        // Simple copy to clipboard micro-interaction
+        document.querySelectorAll('button[title^="Copy"]').forEach(button => {
+            button.addEventListener('click', function() {
+                const originalIcon = this.innerHTML;
+                this.innerHTML = '<span class="material-symbols-outlined text-tertiary-container" data-icon="check">check</span>';
+                this.classList.add('bg-tertiary-container/10');
+                
+                setTimeout(() => {
+                    this.innerHTML = originalIcon;
+                    this.classList.remove('bg-tertiary-container/10');
+                }, 2000);
+            });
+        });
+    </script>
+</body></html>

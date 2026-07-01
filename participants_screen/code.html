@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ConnectPro - Participants</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eeefff",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#213145",
+                      "surface-container-low": "#eff4ff",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#bdffdb",
+                      "on-surface": "#0b1c30",
+                      "secondary-container": "#dae2fd",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#002113",
+                      "background": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary": "#004ac6",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary-fixed": "#6ffbbe",
+                      "tertiary": "#006242",
+                      "surface-bright": "#f8f9ff",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "secondary": "#565e74",
+                      "primary-container": "#2563eb",
+                      "on-secondary-container": "#5c647a",
+                      "surface": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "tertiary-container": "#007d55",
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-variant": "#d3e4fe",
+                      "error-container": "#ffdad6",
+                      "outline": "#737686",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#434655",
+                      "primary-fixed": "#dbe1ff",
+                      "on-background": "#0b1c30",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary-fixed": "#dae2fd",
+                      "surface-tint": "#0053db",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap-sm": "8px",
+                      "unit": "4px",
+                      "stack-gap-md": "16px",
+                      "grid-columns": "4",
+                      "grid-gutter": "16px",
+                      "container-padding": "20px",
+                      "stack-gap-lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "22px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        .glass-panel {
+            background: rgba(248, 249, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(195, 198, 215, 0.2);
+        }
+        .dark .glass-panel {
+            background: rgba(11, 28, 48, 0.7);
+            border: 1px solid rgba(195, 198, 215, 0.1);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col relative overflow-hidden">
+<!-- Background Decoration -->
+<div class="fixed top-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-primary/5 blur-[120px] pointer-events-none z-0"></div>
+<div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-tertiary-container/5 blur-[100px] pointer-events-none z-0"></div>
+<!-- Main Container -->
+<div class="w-full max-w-3xl mx-auto flex flex-col h-screen relative z-10 p-4 md:p-container-padding pb-32 md:pb-8">
+<!-- Header Section -->
+<header class="flex justify-between items-center mb-stack-gap-lg glass-panel rounded-2xl p-4 shadow-[0_4px_20px_rgba(0,74,198,0.04)]">
+<div class="flex items-center gap-stack-gap-md">
+<button class="p-2 rounded-full hover:bg-surface-container-high/50 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant">arrow_back</span>
+</button>
+<div>
+<h1 class="font-headline-md text-headline-md text-primary font-bold">Participants</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Weekly Sync (12)</p>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high/50 transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Admin Controls -->
+<div class="flex gap-stack-gap-md mb-stack-gap-lg">
+<button class="flex-1 bg-surface-container-highest hover:bg-surface-container-high transition-colors text-on-surface font-title-md text-title-md py-3 px-4 rounded-xl flex justify-center items-center gap-2 shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined" data-icon="mic_off">mic_off</span>
+                Mute All
+            </button>
+<button class="flex-1 bg-gradient-to-b from-primary to-primary-fixed-variant hover:opacity-90 transition-opacity text-on-primary font-title-md text-title-md py-3 px-4 rounded-xl flex justify-center items-center gap-2 shadow-md">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                Invite
+            </button>
+</div>
+<!-- Participants List Container -->
+<div class="flex-1 overflow-y-auto pr-2 pb-4 space-y-stack-gap-sm rounded-xl" id="participants-list">
+<!-- Host Item (Self) -->
+<div class="flex items-center justify-between p-4 glass-panel rounded-xl shadow-sm hover:shadow-md transition-shadow group relative overflow-hidden border-l-4 border-l-primary">
+<!-- Subtle speaking indicator background -->
+<div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+<div class="flex items-center gap-stack-gap-md z-10">
+<div class="relative w-12 h-12 rounded-full ring-2 ring-primary ring-offset-2 ring-offset-background">
+<img class="w-full h-full object-cover rounded-full" data-alt="A highly detailed portrait of a confident female executive in a modern corporate office, wearing a stylish navy blazer. The lighting is bright and even, highlighting her professional demeanor. The background is slightly blurred with glass panels, consistent with a high-end enterprise environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyS2NDxKXTjJ7IM3GRI_E_yuIaFQ3qWveEL7LMm7sCT9vGYd9tajARrMqrTlVBlAgr8UzqTX3D8hmqZY60j7aENTyYwdrzjsvhscy0CrUbLpoT0gf5XIiyyJpZoh0iLmbHZp_cv0OhrK4E7Dvj7G0Nlx-326eXWshDFDJWTqx3eNAAflNM9m6kRSej7ccQx_iEKGIqSR8jrmaRTAhknZOaZR78xtOobyLGQJXEF_BrovMHK4oqMzXCuGUG8LXsEAXuL4Y0gIKw-6s"/>
+<div class="absolute -bottom-1 -right-1 bg-surface p-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="mic">mic</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-on-surface">Eleanor Vance</h3>
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full font-label-md text-[10px] uppercase tracking-wider font-bold">Host</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Me</p>
+</div>
+</div>
+<div class="flex items-center gap-2 z-10">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Co-host Item -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group border border-outline-variant/10">
+<div class="flex items-center gap-stack-gap-md">
+<div class="relative w-12 h-12">
+<img class="w-full h-full object-cover rounded-full" data-alt="A professional headshot of a male manager with short dark hair and a neat beard, wearing a crisp light blue shirt. The setting is a bright, minimalist meeting room with subtle white and gray tones. The lighting is soft and flattering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcIgRlECv-MpVLYcwpjH6EqRAFisO94rsVou5wuZE39UQuJnO3HBg08wV_c-rOyyTRz-titjGmzB_fTKSXkB0okqLV2BBtr5Rna-_hNTiZpwKb9My4oogcytzbpDEDY70CsF7PfWMf83b1lM5rkX80UksnmjTgc9X-QsWrJcAQfWD6v_UfkeTXqjj_YLswwCadHP51sZTWr2y_v24634pQ2wqBMgtJT9Gnn07aXF-gvPdAutgimey3qAwTFJSCXwIAsXZw1h8zMvE"/>
+<div class="absolute -bottom-1 -right-1 bg-error-container p-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-error" data-icon="mic_off">mic_off</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-title-md text-title-md text-on-surface">David Chen</h3>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-md text-[10px] uppercase tracking-wider font-bold">Co-host</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Design Lead</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Standard Participant - Speaking -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group border border-outline-variant/10">
+<div class="flex items-center gap-stack-gap-md">
+<div class="relative w-12 h-12 rounded-full ring-2 ring-tertiary ring-offset-2 ring-offset-background animate-pulse">
+<div class="w-full h-full rounded-full bg-tertiary-container flex items-center justify-center font-title-lg text-on-tertiary-container">SJ</div>
+<div class="absolute -bottom-1 -right-1 bg-tertiary-container p-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary" data-icon="mic">mic</span>
+</div>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Sarah Jenkins</h3>
+<div class="flex items-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary animate-bounce" style="animation-delay: 0ms"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary animate-bounce" style="animation-delay: 150ms"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-tertiary animate-bounce" style="animation-delay: 300ms"></div>
+<span class="font-body-md text-[12px] text-tertiary ml-1">Speaking...</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Standard Participant - Muted -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group border border-outline-variant/10">
+<div class="flex items-center gap-stack-gap-md">
+<div class="relative w-12 h-12">
+<img class="w-full h-full object-cover rounded-full grayscale-[20%]" data-alt="A portrait of a young software engineer wearing rectangular glasses and a casual grey sweater. The background is a clean, modern home office space with lots of natural light and minimal clutter, reflecting a high-quality remote work setup." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsKWVXs76nv9G5PCD47ZJv6ZHNQlHaB1RV265mxu362fnOUNJ5l_TPD0ROLiHEGFcoOU8niGBYTkVfUbFHxEi-bh8ivvV4On277In_HQU527AO4CngG7Fn2x0Yl4F0LxV9flHFjW8PhOcjZy6AaQWIDyzUKgLvMhz9PACLhd36my6d83GomHHuB-Irjtl2mJEz4nEpDawnfkdj4ELhR0nE-wiQKdX-P6AJ5YOoU_OSScWLYWwEHfuVlIYjeMB5LlAM0tKcVROC2Tg"/>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest p-0.5 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="mic_off">mic_off</span>
+</div>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface text-opacity-80">Marcus O'Neil</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Frontend Dev</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Standard Participant - Video Off -->
+<div class="flex items-center justify-between p-4 bg-surface rounded-xl shadow-sm hover:bg-surface-container-low transition-colors group border border-outline-variant/10">
+<div class="flex items-center gap-stack-gap-md">
+<div class="relative w-12 h-12">
+<div class="w-full h-full rounded-full bg-surface-container-high flex items-center justify-center font-title-lg text-on-surface-variant">AL</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest p-0.5 rounded-full shadow-sm flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="videocam_off">videocam_off</span>
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="mic_off">mic_off</span>
+</div>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface text-opacity-80">Aisha Patel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Marketing</p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-surface-container-high transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="more_vert">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Nav Shell (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 rounded-t-xl bg-surface/80 dark:bg-on-surface/80 backdrop-blur-xl border-t border-outline-variant/10 shadow-[0_-4px_20px_rgba(0,74,198,0.04)] pb-safe">
+<div class="flex justify-around items-center px-4 pb-4 pt-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-label-md text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-xl px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="video_chat">video_chat</span>
+<span class="font-label-md text-[10px]">Meetings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-md text-[10px]">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="font-label-md text-[10px]">Alerts</span>
+</a>
+</div>
+</nav>
+<!-- Custom scrollbar styling for the list -->
+<style>
+        #participants-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        #participants-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        #participants-list::-webkit-scrollbar-thumb {
+            background-color: rgba(195, 198, 215, 0.5);
+            border-radius: 20px;
+        }
+    </style>
+</body></html>

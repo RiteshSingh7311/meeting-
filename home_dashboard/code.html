@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ConnectPro Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eeefff",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#213145",
+                      "surface-container-low": "#eff4ff",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#bdffdb",
+                      "on-surface": "#0b1c30",
+                      "secondary-container": "#dae2fd",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#002113",
+                      "background": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary": "#004ac6",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary-fixed": "#6ffbbe",
+                      "tertiary": "#006242",
+                      "surface-bright": "#f8f9ff",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "secondary": "#565e74",
+                      "primary-container": "#2563eb",
+                      "on-secondary-container": "#5c647a",
+                      "surface": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "tertiary-container": "#007d55",
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-variant": "#d3e4fe",
+                      "error-container": "#ffdad6",
+                      "outline": "#737686",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#434655",
+                      "primary-fixed": "#dbe1ff",
+                      "on-background": "#0b1c30",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary-fixed": "#dae2fd",
+                      "surface-tint": "#0053db",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap-sm": "8px",
+                      "unit": "4px",
+                      "stack-gap-md": "16px",
+                      "grid-columns": "4",
+                      "grid-gutter": "16px",
+                      "container-padding": "20px",
+                      "stack-gap-lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "display-lg-mobile": ["Inter"],
+                      "title-lg": ["Inter"],
+                      "display-lg": ["Inter"],
+                      "title-md": ["Inter"],
+                      "label-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                      "display-lg-mobile": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen pb-24 font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface/70 backdrop-blur-md border-b border-outline-variant/10 shadow-[0_4px_20px_rgba(0,74,198,0.04)] flex justify-between items-center px-container-padding py-stack-gap-sm transition-all duration-300">
+<div class="flex items-center gap-stack-gap-sm active:scale-95 duration-200 cursor-pointer">
+<img class="w-10 h-10 rounded-full object-cover shadow-sm" data-alt="A professional headshot of a young male executive wearing a sharp navy blue suit and crisp white shirt. The background is a brightly lit, modern corporate office with subtle glass reflections. The lighting is soft and flattering, creating a premium light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-zQThptC2Pu-iujmrAmZt2N5X_XbNuR2aLrLGWRxSejxuERwr932vUhfFZ3OkRlDltSOuQT0X-JCtuyrXrMEOuMtQAdmsTp-xmQ2o2E8Ae641lWFxDUplErPt0eh1Iv-hnOO3zzrMqIfoCOIHvjirYRC8U8Bt_1JSx5qJNQlg3mlUMNSk95p4p8C06aj8dqw4aMoX8svEEDIYpSo8n3rCCyUmgdPBIOSE5ygYrlinwK-vhBoVeqTyJ7hdTC0ZAKFVAxamtL2K49I"/>
+</div>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">ConnectPro</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high/50 transition-colors text-on-surface-variant active:scale-95 duration-200">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+</header>
+<main class="px-container-padding py-stack-gap-lg flex flex-col gap-stack-gap-lg max-w-2xl mx-auto">
+<!-- Greeting Section -->
+<section class="flex flex-col gap-1 mt-2">
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-on-surface">
+                Good morning,<br/>
+<span class="text-primary">Alex</span>
+</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">You have <strong class="text-on-surface font-medium">3 meetings</strong> scheduled for today.</p>
+</section>
+<!-- Quick Actions (Horizontal Scroll) -->
+<section class="flex overflow-x-auto gap-stack-gap-md pb-4 -mx-container-padding px-container-padding snap-x snap-mandatory no-scrollbar">
+<!-- Create Meeting Card -->
+<button class="snap-start min-w-[160px] flex-shrink-0 bg-gradient-to-br from-primary to-primary-fixed-variant text-on-primary rounded-xl p-5 flex flex-col items-start gap-12 shadow-lg shadow-primary/20 hover:shadow-xl hover:-translate-y-1 active:scale-95 transition-all duration-300 relative overflow-hidden group">
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-md border border-white/10 shadow-sm z-10">
+<span class="material-symbols-outlined text-[28px]">add</span>
+</div>
+<div class="flex flex-col items-start text-left z-10">
+<span class="font-title-md text-title-md leading-tight">Create</span>
+<span class="font-title-md text-title-md leading-tight opacity-80">Meeting</span>
+</div>
+</button>
+<!-- Join Meeting Card -->
+<button class="snap-start min-w-[160px] flex-shrink-0 glass-panel text-on-surface rounded-xl p-5 flex flex-col items-start gap-12 shadow-sm hover:bg-surface-container-low transition-all duration-300 active:scale-95">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container shadow-sm">
+<span class="material-symbols-outlined text-[28px]">login</span>
+</div>
+<div class="flex flex-col items-start text-left">
+<span class="font-title-md text-title-md leading-tight">Join</span>
+<span class="font-title-md text-title-md leading-tight text-on-surface-variant">Meeting</span>
+</div>
+</button>
+<!-- Schedule Card (Bonus for visual balance) -->
+<button class="snap-start min-w-[160px] flex-shrink-0 glass-panel text-on-surface rounded-xl p-5 flex flex-col items-start gap-12 shadow-sm hover:bg-surface-container-low transition-all duration-300 active:scale-95">
+<div class="w-12 h-12 rounded-full bg-surface-variant flex items-center justify-center text-on-surface-variant shadow-sm">
+<span class="material-symbols-outlined text-[28px]">calendar_add_on</span>
+</div>
+<div class="flex flex-col items-start text-left">
+<span class="font-title-md text-title-md leading-tight">Schedule</span>
+<span class="font-title-md text-title-md leading-tight text-on-surface-variant">Later</span>
+</div>
+</button>
+</section>
+<!-- Quick Stats Bento Grid -->
+<section class="grid grid-cols-2 gap-grid-gutter">
+<div class="glass-panel rounded-xl p-4 flex flex-col justify-between min-h-[100px] shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-10 text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[48px]">groups</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Meetings Today</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-lg text-display-lg text-primary">3</span>
+<span class="font-body-md text-body-md text-tertiary-container flex items-center bg-tertiary-container/10 px-2 py-0.5 rounded-full"><span class="material-symbols-outlined text-[12px] mr-1">trending_down</span>-1</span>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-4 flex flex-col justify-between min-h-[100px] shadow-sm hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute top-0 right-0 p-3 opacity-10 text-primary pointer-events-none">
+<span class="material-symbols-outlined text-[48px]">schedule</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Total Hours</span>
+<div class="flex items-baseline gap-2 mt-2">
+<span class="font-display-lg text-display-lg text-primary">4.5</span>
+<span class="font-body-md text-body-md text-on-surface-variant">hrs</span>
+</div>
+</div>
+</section>
+<!-- Upcoming Meetings List -->
+<section class="flex flex-col gap-stack-gap-sm mt-4">
+<div class="flex justify-between items-end mb-2 px-1">
+<h2 class="font-title-lg text-title-lg text-on-surface">Upcoming</h2>
+<button class="font-label-md text-label-md text-primary hover:text-primary-fixed-variant transition-colors flex items-center">
+                    View All <span class="material-symbols-outlined text-[16px] ml-1">chevron_right</span>
+</button>
+</div>
+<div class="flex flex-col gap-stack-gap-md">
+<!-- Meeting Item 1 -->
+<div class="bg-surface-container-lowest flex items-stretch rounded-xl overflow-hidden border border-outline-variant/20 shadow-[0_2px_10px_rgba(0,0,0,0.02)] relative group hover:bg-surface-container-low transition-colors duration-200 cursor-pointer">
+<div class="w-1.5 bg-primary flex-shrink-0"></div>
+<div class="p-4 flex flex-col justify-between w-full">
+<div class="flex justify-between items-start mb-3">
+<span class="font-title-md text-title-md text-on-surface pr-4">Q3 Product Roadmap Review</span>
+<span class="font-label-md text-label-md text-primary bg-primary/10 px-2.5 py-1 rounded-md whitespace-nowrap">10:00 AM</span>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-surface-container-lowest object-cover relative z-30" data-alt="A portrait photo of a professional woman with glasses, smiling softly. High-key lighting, modern office background. Corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5inGUdIVYPMOTc7Q1z3dGZ33E4uG9THnPFVd4ofwVHUi7pGY2fmVZPiv4BcEa1WuncvEtS0ZxrDPYxg_SkLcZGKELvu1HGfd89j4cEbZRZmiKpHOQqqyrTwCtzHtP9hMlUfZNGVCDs0y-FRvtwoEGg3bKZJ7Tl78jK_pNQjYuvNyR3fg6EfcrMfMx7GnVDJ4DvWeeGLSFI2687g_40Ww_SMcyXLNdSWBJX7AeYxsG0_EtzXv-t-GrrzxS4d6W2MUN_ZDsfwK3Voc"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container-lowest object-cover relative z-20" data-alt="A headshot of a middle-aged man in a grey suit. Bright, clean lighting against a muted background. Professional light-mode styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmol-JKO4lY0znPidcQj1sHIl1zkolJSpGFKiJQOjTWROuwYYDoTWFw6txygzSyKad_Ic5wMrSASKiQnzD5A8N_dgHEjPiiqtEwE8RQj99maUMhd5fQrUeb7G9l2eQWgjELwxq32dNenpRn4Ccbeun2ZQ4HIAQOjMnYuj7ul3aOghWdJA7nG0xLWuriUiXdA_iL9GJ5FLx6e4-BTNuevC8aHI0jlNCHfRniFY91_qVi-hNct4zSXAk203tJdTrUasQbYyZFCJ-hxo"/>
+<div class="w-8 h-8 rounded-full border-2 border-surface-container-lowest bg-secondary-container flex items-center justify-center relative z-10 text-on-secondary-container font-label-md text-label-md">
+                                    +3
+                                </div>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">videocam</span> 45 min
+                            </span>
+</div>
+</div>
+</div>
+<!-- Meeting Item 2 -->
+<div class="bg-surface-container-lowest flex items-stretch rounded-xl overflow-hidden border border-outline-variant/20 shadow-[0_2px_10px_rgba(0,0,0,0.02)] relative group hover:bg-surface-container-low transition-colors duration-200 cursor-pointer opacity-80">
+<div class="w-1.5 bg-tertiary flex-shrink-0"></div>
+<div class="p-4 flex flex-col justify-between w-full">
+<div class="flex justify-between items-start mb-3">
+<span class="font-title-md text-title-md text-on-surface pr-4">Design System Sync</span>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-variant px-2.5 py-1 rounded-md whitespace-nowrap">1:30 PM</span>
+</div>
+<div class="flex items-center justify-between mt-auto">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-surface-container-lowest object-cover relative z-20" data-alt="A casual professional headshot of a young woman with curly hair. Soft, natural light, minimalist background. Clean corporate look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCUCIlMPzG0RFaiTjScD1AoSsQH40Sk05SKfHNAzCSdAaHJhY1A7grUwiemdQM-nh7RGvU6CLKfH0eNpmMQOYO4sxWmJEvqI8zjYZlcbFrrDOyxy6jekHhWRWr_GOxZSS9Onr0U6TP4Vwcvd2xSRJJjOvXNyya8VpDxPrcqxqEkuDTVsCxhtrUjqjFUqEm010JnCQ6RdEsgM2WqsfhuOiiHGJ8ZxvpZu4yT8n5Bt0k7fr8r3GqlFmqBXn_ozhwCs9kpWT2Hl65tiI"/>
+<img class="w-8 h-8 rounded-full border-2 border-surface-container-lowest object-cover relative z-10" data-alt="A portrait of a young man wearing a simple dark t-shirt in a bright startup office setting. Clean, modern light mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5AbM0CGO6Q5U38y6UHX5_myUemnGntC3AunK9ueXl6P7CrAhC3nQEhX9wCI5PtBxSqnlulBdnWE9zYY3ie-OVAUx2fHWK5UFcbpNkgVi6U2oGnvep7B_VAzEIm4tMv9M2wvJrDJ6THKgl38UJbGGC7CskaNFuCMinurOJIrXQs1FrfWrM2zQWkDEMx670KcXRUxJdBlKpnsygokI2Og9m_uaMaweorNDix4IV0HEslG0pPR_gc0iJQTEIwjPJEOLCzW_t6hJlVwY"/>
+</div>
+<span class="font-body-md text-body-md text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">videocam</span> 30 min
+                            </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-6 pt-3 bg-surface/90 backdrop-blur-xl border-t border-outline-variant/10 shadow-[0_-4px_20px_rgba(0,74,198,0.04)] z-50 rounded-t-[24px]">
+<!-- Active: Home -->
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-xl px-4 py-1.5 transition-all active:scale-90 duration-150 relative overflow-hidden group" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+<div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</a>
+<!-- Inactive: Meetings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-on-surface hover:bg-surface-container-low rounded-xl transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">video_chat</span>
+<span class="font-label-md text-label-md">Meetings</span>
+</a>
+<!-- Inactive: Calendar -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-on-surface hover:bg-surface-container-low rounded-xl transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">calendar_today</span>
+<span class="font-label-md text-label-md">Calendar</span>
+</a>
+<!-- Inactive: Alerts -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-on-surface hover:bg-surface-container-low rounded-xl transition-all active:scale-90 duration-150 relative" href="#">
+<div class="absolute top-1 right-3 w-2 h-2 bg-error rounded-full border-2 border-surface"></div>
+<span class="material-symbols-outlined mb-1">notifications</span>
+<span class="font-label-md text-label-md">Alerts</span>
+</a>
+<!-- Inactive: Profile -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-3 py-1.5 hover:text-on-surface hover:bg-surface-container-low rounded-xl transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+</body></html>

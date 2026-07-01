@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Notifications - ConnectPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eeefff",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#213145",
+                      "surface-container-low": "#eff4ff",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#bdffdb",
+                      "on-surface": "#0b1c30",
+                      "secondary-container": "#dae2fd",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#002113",
+                      "background": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary": "#004ac6",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary-fixed": "#6ffbbe",
+                      "tertiary": "#006242",
+                      "surface-bright": "#f8f9ff",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "secondary": "#565e74",
+                      "primary-container": "#2563eb",
+                      "on-secondary-container": "#5c647a",
+                      "surface": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "tertiary-container": "#007d55",
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-variant": "#d3e4fe",
+                      "error-container": "#ffdad6",
+                      "outline": "#737686",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#434655",
+                      "primary-fixed": "#dbe1ff",
+                      "on-background": "#0b1c30",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary-fixed": "#dae2fd",
+                      "surface-tint": "#0053db",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap-sm": "8px",
+                      "unit": "4px",
+                      "stack-gap-md": "16px",
+                      "grid-columns": "4",
+                      "grid-gutter": "16px",
+                      "container-padding": "20px",
+                      "stack-gap-lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "22px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md antialiased pb-24 selection:bg-primary selection:text-on-primary md:pb-0">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-50 bg-surface/70 dark:bg-on-surface/70 backdrop-blur-xl border-b border-outline-variant/10 shadow-[0_4px_20px_rgba(0,74,198,0.04)] hidden md:block">
+<div class="flex justify-between items-center px-container-padding py-stack-gap-sm w-full">
+<div class="flex items-center gap-stack-gap-md">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-outline-variant/20">
+<img alt="User Profile Photo" class="w-full h-full object-cover" data-alt="Professional headshot of a corporate user, neutral lighting, modern business attire, high quality, soft background blur, conveying trust and efficiency." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7AVnxMeDHthF0M3nvr4g9fYu_M5VvdE2OY4CNi1yOMNws3AuWeyrSYxcOsKSHUKkR2M6j_Px7Y1fGu5PtmERQo2X7i3dzVsLXoCAX_0r1T9PghwxflBLxlTBLDFP5PArWIOlzCvl6ZbAqKcPeyEYswpjRscNm7QZRqZsria5vTLe8m4Cp25Qf6OlYBQnhiq_eZscBlY0fhB4cmLOYJOKFTzllG_r4SEJAIRtUulkjDdLZ6axGMGOmKh4nHvCe4zpcRmFAPr32gG8"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim tracking-tight">ConnectPro</h1>
+</div>
+<nav class="hidden md:flex items-center gap-stack-gap-lg">
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/10 transition-colors px-3 py-2 rounded-lg active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-md">Home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/10 transition-colors px-3 py-2 rounded-lg active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">video_chat</span>
+<span class="font-label-md text-label-md">Meetings</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/10 transition-colors px-3 py-2 rounded-lg active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-label-md text-label-md">Calendar</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-primary dark:text-primary-fixed-dim hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/10 transition-colors px-3 py-2 rounded-lg active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-label-md text-label-md">Alerts</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/10 transition-colors px-3 py-2 rounded-lg active:scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-md text-label-md">Profile</span>
+</a>
+</nav>
+<button class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high/50 dark:hover:bg-surface-container-highest/10 transition-colors p-2 rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</header>
+<!-- Mobile Top Header (Simplified) -->
+<header class="w-full sticky top-0 z-40 bg-surface/80 backdrop-blur-md border-b border-outline-variant/10 md:hidden pt-4 pb-2 px-container-padding flex justify-between items-center">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface">Notifications</h1>
+<button class="text-on-surface-variant p-2 rounded-full hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">done_all</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="max-w-4xl mx-auto px-container-padding py-stack-gap-lg md:py-8 w-full">
+<!-- Desktop Header -->
+<div class="hidden md:flex justify-between items-end mb-stack-gap-lg">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-2">Notifications</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">You have 3 unread updates.</p>
+</div>
+<button class="font-label-md text-label-md text-primary hover:text-primary-fixed-dim transition-colors flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+                Mark all as read
+            </button>
+</div>
+<!-- Filter/Tabs -->
+<div class="flex gap-2 overflow-x-auto pb-4 mb-4 hide-scrollbar">
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap shadow-sm">All</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Unread</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Mentions</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md whitespace-nowrap hover:bg-surface-container-high transition-colors">Recordings</button>
+</div>
+<!-- Notifications List -->
+<div class="flex flex-col gap-unit">
+<!-- Unread: Meeting Invite -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-4 md:p-stack-gap-md shadow-[0_2px_10px_rgba(0,74,198,0.02)] border border-outline-variant/10 hover:shadow-[0_4px_20px_rgba(0,74,198,0.06)] transition-all duration-300 cursor-pointer overflow-hidden">
+<!-- Unread Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-start gap-stack-gap-md pl-2">
+<div class="relative shrink-0 mt-1">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/20">
+<img alt="Sarah Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a female executive named Sarah, corporate environment, smiling warmly, high resolution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCns8k-z79QKg2Jc3Gy3cWy3FsjMtOSZ2DKQNGrhvDUNFEsKK9VlNSWlRVdOVDsSZtr5k1sJ-n6JfpJMLvWnrQt4Sp3hyRCI4EWMbAL_kxS6cgE1syT0ys-BnFNnpHQRUfDVh0gcOcReTQJYswJEgQNDDzO0MsH-pDo9qAtMSWA8MByVZekUfZhqKVh0_JsSNzD5Is9YoHMS3XxuWF3opg_yv39oVe05bZm0NV1NlRvQ7kYT3zs1IZxGA9krisHO8PbDuct0Y2p340"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 bg-tertiary-container rounded-full flex items-center justify-center border-2 border-surface-container-lowest">
+<span class="w-2.5 h-2.5 bg-tertiary-fixed rounded-full animate-pulse shadow-[0_0_8px_rgba(111,251,190,0.6)]"></span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start gap-2 mb-1">
+<h3 class="font-title-md text-title-md text-on-surface truncate">Meeting invitation from Sarah</h3>
+<span class="font-body-md text-body-md text-primary font-medium shrink-0 text-sm">2m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-3">Sarah sent you an invitation for "Q3 Product Roadmap Review". Scheduled for tomorrow at 10:00 AM.</p>
+<div class="flex gap-2">
+<button class="bg-primary hover:bg-primary-fixed-variant text-on-primary font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex-1 md:flex-none text-center">Accept</button>
+<button class="border border-outline hover:bg-surface-container-low text-on-surface font-label-md text-label-md px-4 py-2 rounded-lg transition-colors flex-1 md:flex-none text-center">Decline</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Unread: Reminder -->
+<div class="group relative bg-surface-container-lowest rounded-xl p-4 md:p-stack-gap-md shadow-[0_2px_10px_rgba(0,74,198,0.02)] border border-outline-variant/10 hover:shadow-[0_4px_20px_rgba(0,74,198,0.06)] transition-all duration-300 cursor-pointer overflow-hidden">
+<!-- Unread Indicator -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-start gap-stack-gap-md pl-2">
+<div class="shrink-0 mt-1">
+<div class="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">alarm</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex justify-between items-start gap-2 mb-1">
+<h3 class="font-title-md text-title-md text-on-surface truncate">Reminder: Standup in 10m</h3>
+<span class="font-body-md text-body-md text-primary font-medium shrink-0 text-sm">10m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-3">Daily engineering sync is starting soon in the main virtual room.</p>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md px-4 py-2 rounded-lg transition-colors w-full md:w-auto text-center flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">login</span>
+                            Join Now
+                        </button>
+</div>
+</div>
+</div>
+<!-- Read: Update -->
+<div class="group relative bg-surface/50 rounded-xl p-4 md:p-stack-gap-md border border-outline-variant/5 hover:bg-surface-container-lowest transition-all duration-300 cursor-pointer">
+<div class="flex items-start gap-stack-gap-md pl-2">
+<div class="shrink-0 mt-1">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[24px]">smart_display</span>
+</div>
+</div>
+<div class="flex-1 min-w-0 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start gap-2 mb-1">
+<h3 class="font-title-md text-title-md text-on-surface truncate">Update: New recording available</h3>
+<span class="font-body-md text-body-md text-on-surface-variant shrink-0 text-sm">1h ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">The recording for "Weekly Design Critique" has finished processing and is ready to view.</p>
+</div>
+</div>
+</div>
+<!-- Read: Mention -->
+<div class="group relative bg-surface/50 rounded-xl p-4 md:p-stack-gap-md border border-outline-variant/5 hover:bg-surface-container-lowest transition-all duration-300 cursor-pointer">
+<div class="flex items-start gap-stack-gap-md pl-2">
+<div class="shrink-0 mt-1">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-outline-variant/10">
+<img alt="David Profile" class="w-full h-full object-cover" data-alt="Professional headshot of a male colleague, friendly expression, modern office setting, soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaA91hqu12alAQfHRzHLP4V1cTTFA5YV7BUEStjVI8N7i87zazjIR8QjfeF3qf9Efku8BlYaFS04DUv1yZeCjd-CxO1Y-_u0VQ4TrysgwOjtBw0oTqW9pIYMUsEJEfFaHQJ2u_UmqYqODCtUNiid7vbnSsfzfBaVAw5xV_-MXB4gK0xk83xrgjDhUVpCaHIOWJjreNztph0GJGqhYqk2EqeqzdvpP1DmGAFYD6BbtiTAOZruw3T3D9KjPtyyrT_0znUfvA5VTQJHg"/>
+</div>
+</div>
+<div class="flex-1 min-w-0 opacity-70 group-hover:opacity-100 transition-opacity">
+<div class="flex justify-between items-start gap-2 mb-1">
+<h3 class="font-title-md text-title-md text-on-surface truncate">David mentioned you</h3>
+<span class="font-body-md text-body-md text-on-surface-variant shrink-0 text-sm">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">"Can we get <span class="font-medium text-on-surface">@You</span> to review the latest comp before the client call?"</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-4 pt-2 bg-surface/80 dark:bg-on-surface/80 backdrop-blur-xl border-t border-outline-variant/10 shadow-[0_-4px_20px_rgba(0,74,198,0.04)] rounded-t-xl z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-md mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">video_chat</span>
+<span class="font-label-md text-label-md mt-1">Meetings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">calendar_today</span>
+<span class="font-label-md text-label-md mt-1">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary rounded-xl px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-label-md text-label-md mt-1">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-3 py-1 hover:bg-surface-container-low dark:hover:bg-surface-container-high transition-all active:scale-90 duration-150 rounded-xl" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-md text-label-md mt-1">Profile</span>
+</a>
+</nav>
+<style>
+        /* Utility for hiding scrollbar but keeping functionality */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</body></html>

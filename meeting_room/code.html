@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ConnectPro - Meeting Room</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#eeefff",
+                      "on-secondary": "#ffffff",
+                      "inverse-surface": "#213145",
+                      "surface-container-low": "#eff4ff",
+                      "outline-variant": "#c3c6d7",
+                      "on-tertiary-container": "#bdffdb",
+                      "on-surface": "#0b1c30",
+                      "secondary-container": "#dae2fd",
+                      "on-primary": "#ffffff",
+                      "on-tertiary-fixed": "#002113",
+                      "background": "#f8f9ff",
+                      "surface-container-high": "#dce9ff",
+                      "primary": "#004ac6",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-error": "#ffffff",
+                      "primary-fixed-dim": "#b4c5ff",
+                      "on-tertiary-fixed-variant": "#005236",
+                      "on-primary-fixed": "#00174b",
+                      "tertiary-fixed": "#6ffbbe",
+                      "tertiary": "#006242",
+                      "surface-bright": "#f8f9ff",
+                      "tertiary-fixed-dim": "#4edea3",
+                      "secondary": "#565e74",
+                      "primary-container": "#2563eb",
+                      "on-secondary-container": "#5c647a",
+                      "surface": "#f8f9ff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "tertiary-container": "#007d55",
+                      "on-secondary-fixed": "#131b2e",
+                      "surface-variant": "#d3e4fe",
+                      "error-container": "#ffdad6",
+                      "outline": "#737686",
+                      "surface-container-lowest": "#ffffff",
+                      "inverse-primary": "#b4c5ff",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "on-tertiary": "#ffffff",
+                      "on-surface-variant": "#434655",
+                      "primary-fixed": "#dbe1ff",
+                      "on-background": "#0b1c30",
+                      "surface-dim": "#cbdbf5",
+                      "surface-container": "#e5eeff",
+                      "on-primary-fixed-variant": "#003ea8",
+                      "secondary-fixed": "#dae2fd",
+                      "surface-tint": "#0053db",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "error": "#ba1a1a"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "stack-gap-sm": "8px",
+                      "unit": "4px",
+                      "stack-gap-md": "16px",
+                      "grid-columns": "4",
+                      "grid-gutter": "16px",
+                      "container-padding": "20px",
+                      "stack-gap-lg": "24px"
+              },
+              "fontFamily": {
+                      "headline-md": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg-mobile": [
+                              "Inter"
+                      ],
+                      "title-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Inter"
+                      ],
+                      "title-md": [
+                              "Inter"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "14px",
+                              {
+                                      "lineHeight": "22px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "16px",
+                              {
+                                      "lineHeight": "26px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "36px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-lg": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "title-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "500"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(195, 198, 215, 0.3); /* outline-variant */
+        }
+        .dark .glass-panel {
+            background: rgba(11, 28, 48, 0.7); /* on-surface */
+            border: 1px solid rgba(115, 118, 134, 0.3); /* outline */
+        }
+        
+        /* For the main video area, we want a dark, immersive background even in light mode, as is standard for video calls */
+        .video-container {
+            background-color: #000;
+        }
+      </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="h-full bg-background dark:bg-on-background text-on-surface dark:text-surface-variant overflow-hidden flex flex-col font-body-md">
+<!-- Top AppBar - Following Shared Components JSON logic but adapted for in-meeting context -->
+<header class="w-full sticky top-0 z-50 bg-surface/70 dark:bg-on-surface/70 backdrop-blur-xl border-b border-outline-variant/10 shadow-[0_4px_20px_rgba(0,74,198,0.04)] flex justify-between items-center px-container-padding py-stack-gap-sm">
+<div class="flex items-center gap-stack-gap-sm">
+<span class="material-symbols-outlined text-primary font-bold">menu</span>
+<div class="font-title-lg text-title-lg text-on-surface">Q3 Strategic Planning Review</div>
+</div>
+<div class="flex items-center gap-stack-gap-md">
+<div class="bg-surface-container-high px-3 py-1 rounded-full font-label-md text-label-md text-on-surface-variant flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-error animate-pulse"></span>
+                01:42:15
+            </div>
+<!-- Layout Switcher -->
+<button class="p-2 rounded-lg hover:bg-surface-container-high/50 transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a smiling woman with dark hair in a well-lit office setting, wearing a navy blazer, representing a user profile photo. The background is slightly blurred showing modern glass office partitions. High quality corporate portrait photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwroqfomjXGQJ3snfKyVzCSl2CyJeb93lHokgSuhOefe9my5sfAWWwy4P1Oy9eYiFYk7eUdXmAXJ7evD8tMwgVbRERjI8qAlIKEA3kUgA_G_LryQrxqxeUGuSe707we6iurBj2fenukQbXeCPs7yKOFIdMVY6ulMnMcJyKnCVxnsp5o_rZ28e-ZdZzx294vSCTQuYmSHv3rdtYCljoAyzaKQ-YY4tmhFkmpdpanZBRSMf69w7yiTShwd5wWt2hls5dnStpM7d7bW0"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area: Video Grid -->
+<main class="flex-1 video-container relative p-stack-gap-sm md:p-container-padding flex gap-stack-gap-sm">
+<!-- Video Grid container -->
+<div class="flex-1 grid grid-cols-2 grid-rows-2 gap-stack-gap-sm h-full w-full">
+<!-- Participant 1 -->
+<div class="relative rounded-xl overflow-hidden bg-surface-variant group">
+<img class="w-full h-full object-cover" data-alt="A high-quality video conference feed showing a professional man in his 40s wearing a light blue button-down shirt, sitting in a home office with a bookshelf behind him. He looks focused, listening intently. Lighting is natural from a window to his left." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeQX9ITDC1vSkMPqK6Y070nWahrQZ-oRpny2icLqF46GLad6cKP_Od-TEIq9pFt0BvmW2szCmRyPS-8GPeqHEmej94vvO5ifP5zHGW7_d-OkvpgK10yb5uIF1Qqe92LX5jjiii_jwW1px91eEKlRfLUPvQfqKlbtzOVg8nz57WejFyOBPa9fWuKr0J1SmlQG3JMcDHfTFq13M08zkZUYzNXqhamtvnHuGh69LvzMe0iW_gMPfdfOhwSIO3rVoGit1ek-zfQWoIMIA"/>
+<!-- Name Tag -->
+<div class="absolute bottom-4 left-4 glass-panel px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
+<span class="font-title-md text-title-md text-on-surface">Michael Chang</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">mic_off</span>
+</div>
+</div>
+<!-- Participant 2 -->
+<div class="relative rounded-xl overflow-hidden bg-surface-variant group border-2 border-primary">
+<img class="w-full h-full object-cover" data-alt="A clear video call feed of a young woman with glasses and curly brown hair, actively speaking and gesturing with one hand. She is in a minimalist room with a plant and a clean white wall. Bright, even ring-light style illumination." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdVYZQcGURetUxpMTK5EUlbgzdZziXI8lXs3LH5_dUuN4dM3AXvPGN8Hd4pOD2y3dFAEo-eA2atjRsw1gViurbN-zGT-8DeLmVtK-K9Q3heEv9VcrjnzfsitCeOdP5SAgjhSUZOOpEAoUWMm9KMaRijfyhjMWPzqz8x_XI_Q4gObJu2rbw5F-twjRcTU_EjDeLXYMLoO0CKsk3mmW9kv9zaou5r_ZPnT1bLmRkfI_rhqHp4QCj4-b0RxCJSGkjkyFUEtNnrGfczc8"/>
+<!-- Name Tag & Speaking Indicator -->
+<div class="absolute bottom-4 left-4 glass-panel px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="font-title-md text-title-md text-on-surface">Sarah Jenkins</span>
+<div class="flex gap-0.5 items-end h-4 ml-1">
+<div class="w-1 bg-primary rounded-t-sm h-2 animate-[bounce_1s_infinite]"></div>
+<div class="w-1 bg-primary rounded-t-sm h-4 animate-[bounce_1.2s_infinite]"></div>
+<div class="w-1 bg-primary rounded-t-sm h-1 animate-[bounce_0.8s_infinite]"></div>
+</div>
+</div>
+</div>
+<!-- Participant 3 -->
+<div class="relative rounded-xl overflow-hidden bg-surface-variant group">
+<img class="w-full h-full object-cover" data-alt="Video feed of a senior executive woman in a dark grey suit, sitting in a high-rise corporate office with city views behind her. She has a neutral expression, looking directly at the camera. Crisp, professional corporate lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcLd6WLS_qpzADAUuKywHPVUkRB18S46Ee43wjrlEH5YYVfqAbFAyGszvphz-97i5_bXFoDmRWzgVhHlpxCJZPYtmEKjKyLSB2sQgjy6sCU2LMTFogXKR6CWYpjHmg4kJU5mYHNZodmw6tc_IsdbKJQEFw7B0uFjZJhC-J1Oh_hHUx-JB56oFe3LY-onJ2Sa1ZNMHtvhIrQHHbK0CpROxW9Zv1CypnQw4UJ86c4v_s1vabTo3dpEd4QBFtLNRDnWmTmZizr46oDmM"/>
+<!-- Name Tag -->
+<div class="absolute bottom-4 left-4 glass-panel px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
+<span class="font-title-md text-title-md text-on-surface">Elena Rodriguez</span>
+</div>
+</div>
+<!-- Participant 4 (Self / Presentation placeholder) -->
+<div class="relative rounded-xl overflow-hidden bg-surface-variant group">
+<img class="w-full h-full object-cover" data-alt="Video feed showing a young man of South Asian descent in a casual green sweater, smiling lightly in a cozy home environment with warm ambient lighting. Professional webcam quality with slight depth of field blur on the background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACh0JH2iPJw_q0LxXXXJSKRNYhj-iEkkhsCGxivt2etxrtbOW_R2P71dZSO9RdXrSwOBc-iN75o1MUXfCKZ_RmK4zleznkcb_AAdxSy0f5jHGzvnDhYJjbgHDpdYM7b33KKuWPAk9W4HBF0mu1Wrc2C6BEEfFhKxYvpvxBcKSCTKEGMry3X3UkOft4pNICNgXdZu-5ADRMpnASh3Dx9_C9IBv8gnCEj8yXdP6TAEtO4LBu5AVjP1DEZIuIfrCfVA6ZrE3gvW0-smQ"/>
+<!-- Name Tag -->
+<div class="absolute bottom-4 left-4 glass-panel px-3 py-1.5 rounded-lg flex items-center gap-2 shadow-sm">
+<span class="font-title-md text-title-md text-on-surface">David Kumar</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">mic_off</span>
+</div>
+</div>
+</div>
+<!-- Self Preview (Floating) -->
+<div class="absolute top-container-padding right-container-padding w-48 aspect-video rounded-lg overflow-hidden border border-outline-variant/30 shadow-lg z-10 cursor-move">
+<img class="w-full h-full object-cover" data-alt="A small self-preview video feed showing the user, a person in a plain white t-shirt against a plain neutral background. Standard webcam perspective, well lit." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX0ofPjk2Ydsv4pmbfhKfU3U9UbV44vrAv9pa9r8-7BvTrRjwIBxrJM_8NG6AosgvBbGgoKRBXimOkwV_ZzmbDTQSGlGLrA2xL5aLlWuHzkU7fBpQfsslfmgvUKoDI_UoH6hp2mbmDEl4cDgQEYbF9qznl8Wf1h6dvzX8PBrCtus_DUMz1WgPsPFbCGv135piKUeG4rWR354HI8KpqK1x1deI4HAf6maZn4Pa8t1dhiYZldEcmSd__MjaNzWYJfbEZs9cIYxcCjfw"/>
+<div class="absolute bottom-2 left-2 bg-on-surface/50 backdrop-blur-md px-2 py-0.5 rounded text-white text-[10px] flex items-center gap-1">
+                You
+             </div>
+</div>
+<!-- Bottom Control Bar (Glassmorphism) -->
+<div class="absolute bottom-container-padding left-1/2 transform -translate-x-1/2 glass-panel rounded-full px-6 py-3 flex items-center gap-4 shadow-xl z-20">
+<!-- Mic Control -->
+<div class="flex flex-col items-center gap-1">
+<button class="w-12 h-12 rounded-full bg-error-container text-on-error-container flex items-center justify-center hover:bg-error/20 transition-all shadow-sm">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mic_off</span>
+</button>
+</div>
+<!-- Camera Control -->
+<div class="flex flex-col items-center gap-1">
+<button class="w-12 h-12 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-all shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videocam</span>
+</button>
+</div>
+<div class="w-px h-8 bg-outline-variant/30 mx-2"></div>
+<!-- Share Screen -->
+<button class="w-12 h-12 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-all shadow-sm border border-outline-variant/20 tooltip-trigger">
+<span class="material-symbols-outlined">present_to_all</span>
+</button>
+<!-- Chat -->
+<button class="w-12 h-12 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-all shadow-sm border border-outline-variant/20 relative">
+<span class="material-symbols-outlined">chat</span>
+<span class="absolute top-0 right-0 w-3 h-3 bg-primary rounded-full border-2 border-surface"></span>
+</button>
+<!-- Participants -->
+<button class="w-12 h-12 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-all shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined">group</span>
+</button>
+<!-- Hand -->
+<button class="w-12 h-12 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-all shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined">pan_tool</span>
+</button>
+<!-- More -->
+<button class="w-12 h-12 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-all shadow-sm border border-outline-variant/20">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+<div class="w-px h-8 bg-outline-variant/30 mx-2"></div>
+<!-- End Call -->
+<button class="h-12 px-6 rounded-full bg-error text-on-error flex items-center gap-2 hover:bg-error/90 transition-all font-title-md text-title-md shadow-md">
+<span class="material-symbols-outlined">call_end</span>
+                Leave
+            </button>
+</div>
+</main>
+<!-- Suppressed BottomNavBar as per JSON intent rules: This is a linear/task-focused screen (a meeting), not a navigation destination -->
+</body></html>
